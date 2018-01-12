@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin:'application'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+mainClassName = 'WordSolver'
+
+run {
+    if(project.hasProperty('cliargs')){
+        args(cliargs.split(' '))
+    }
+}
